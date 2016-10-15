@@ -25,4 +25,14 @@ angular.module('devmtnTravel').service('mainSrv', function(){
 
 
     }]
-})
+
+    this.getLocation = function (id) {
+      let bookedLocation;
+      this.travelInfo.forEach(function (location) {
+        if (location.id == id) {
+          bookedLocation = location;
+        }
+      })
+      return bookedLocation;
+    }
+  })
